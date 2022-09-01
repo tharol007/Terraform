@@ -1,13 +1,13 @@
 
 provider "aws" {
-	region = "us-east-1"
+	region = "ap-south-1"
 }
 
 terraform {
   backend "s3" {
     bucket = "terraform-backend-spovedd"
     key    = "terraform.tfstate"
-    region = "us-east-1"
+    region = "ap-south-1"
   }
 }
 
@@ -21,7 +21,7 @@ resource "aws_vpc" "default" {
 resource "aws_subnet" "public-subnet" {
   vpc_id = "${aws_vpc.default.id}"
   cidr_block = "10.0.1.0/24"
-  availability_zone = "us-east-1a"
+  availability_zone = "ap-south-1a"
 
 }
 
